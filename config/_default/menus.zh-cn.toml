@@ -1,0 +1,54 @@
+[[main]]
+name = "文章"
+pageRef = "posts"
+weight = 10
+
+[[main]]
+name = "归档"
+pageRef = "posts"
+weight = 20
+
+[[main]]
+name = "研究"
+parent = "归档"
+pageRef = "tags/研究/"
+weight = 21
+
+[[main]]
+name = "技术"
+parent = "归档"
+pageRef = "tags/技术/"
+weight = 22
+
+[[main]]
+name = "随笔"
+parent = "归档"
+pageRef = "tags/随笔/"
+weight = 23
+
+[[main]]
+name = "补档"
+parent = "归档"
+pageRef = "tags/补档/"
+weight = 24
+
+
+[[main]]
+name = "友链"
+pageRef = "friends"
+weight = 40
+
+[[footer]]
+name = "关于"
+pageRef = "about"
+weight = 10
+
+[[footer]]
+name = "统计"
+pageRef = "statistics"
+weight = 20
+
+[[footer]]
+name = "Tags"
+pageRef = "tags"
+weight = 30

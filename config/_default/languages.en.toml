@@ -1,0 +1,29 @@
+languageCode = "en"
+languageName = "English"
+weight = 2
+title = "JiBinquan's blog"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+#logo = "img/logo.png"                                            # 网站标志图片路径
+#secondaryLogo = "img/logo.png"           # 第二标志图片路径
+description = "JiBinquan的博客"                       # 网站的描述
+copyright = ":copyright: { year } Ji Binquan"        # 版权信息，包含动态的年份占位符
+
+
+
+# 作者信息
+[author]
+  name = "Ji Binquan"                                  # 作者姓名
+  image = "img/avatar.jpg"                            # 作者头像图片路径
+  headline = "Seriously? Are there actually people who read the English version?"                                 # 作者的口号或座右铭
+  bio = "Even graduate students, who are supposed to be doing research, haven't figured it out yet."                         # 作者的简短传记
+  # 作者的社交媒体链接列表，还可以添加更多
+  links = [
+    { zhihu = "https://www.zhihu.com/people/herb-42-46" },    # 知乎链接
+    { github = "https://github.com/JiBinquan" },    # GitHub 链接
+    { email = "mailto:haing6@163.com" },     # 电子邮件链接
+  ]
