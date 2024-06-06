@@ -4,39 +4,39 @@ pageRef = "posts"
 weight = 10
 
 [[main]]
-name = "归档"
-pageRef = "posts"
-weight = 20
-
-[[main]]
 name = "研究"
-parent = "归档"
+parent = "文章"
 pageRef = "tags/研究/"
 weight = 21
 
 [[main]]
 name = "技术"
-parent = "归档"
+parent = "文章"
 pageRef = "tags/技术/"
 weight = 22
 
 [[main]]
 name = "随笔"
-parent = "归档"
+parent = "文章"
 pageRef = "tags/随笔/"
 weight = 23
 
 [[main]]
-name = "补档"
-parent = "归档"
-pageRef = "tags/补档/"
+name = "算法"
+parent = "文章"
+pageRef = "tags/算法/"
 weight = 24
-
 
 [[main]]
 name = "友链"
 pageRef = "friends"
+weight = 30
+
+[[main]]
+name = "更多"
+pageRef = "more"
 weight = 40
+
 
 [[footer]]
 name = "关于"

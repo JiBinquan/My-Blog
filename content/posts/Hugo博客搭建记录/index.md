@@ -6,6 +6,9 @@ draft = false
 
 tags=["技术","前端","建站"]
 
+series = ["博客搭建"]
+series_order=1
+
 +++
 
 # 博客搭建记录
@@ -136,43 +139,42 @@ title = "JiBinquan's blog"                             # 网页标题
 
 头像放在`assets\img` 路径下（若没有建立目录即可），如果你的`links`没有默认的图标，可以把同名图标放置在`assets\icons`路径下
 
-`menus.zh-cn.toml`是目录配置，可以根据你的需要自己配置目录，注意在
+`menus.zh-cn.toml`是目录配置，可以根据你的需要自己配置目录，可以参考如下编写。
 
 ```toml
 [[main]]
- name = "文章"
- pageRef = "posts"
- weight = 10
+name = "文章"
+pageRef = "posts"
+weight = 10
 
 [[main]]
- name = "归档"
- pageRef = "documents"
- weight = 20
+name = "研究"
+parent = "文章"
+pageRef = "tags/研究/"
+weight = 21
 
 [[main]]
- name = "更多"
- pageRef = "more"
- weight = 30
+name = "技术"
+parent = "文章"
+pageRef = "tags/技术/"
+weight = 22
 
- [[main]]
- name = "友链"
- pageRef = "friends"
- weight = 40
+[[main]]
+name = "友链"
+pageRef = "friends"
+weight = 30
 
-[[footer]]
- name = "关于"
- pageRef = "about"
- weight = 10
 
 [[footer]]
-  name = "统计"
-  pageRef = "statistics"
-  weight = 20
+name = "关于"
+pageRef = "about"
+weight = 10
 
 [[footer]]
-  name = "Tags"
-  pageRef = "tags"
-  weight = 30
+name = "Tags"
+pageRef = "tags"
+weight = 30
+
 ```
 
 
@@ -277,46 +279,190 @@ hasCJKLanguage = true
 
 
 
+## 四、部署到Github
+
+### 4.1 创建仓库
+
+在Github方面，需要新建两个仓库。一个是网页源代码仓库，便于进行版本管理。一个是 `Github Page` 仓库，用于网页部署。
+
+新建仓库在 `Your Repositories` 下选 `New` 就行。
+
+需要注意的是 **GitHub Pages** 仓库：
+
+1. 必须使用特殊的命名格式`<username.github.io>`， `<username>` 是你的 GitHub 的用户名，如下图所示。
+
+![image-20240606091132228](pic/image-20240606091132228.png)
+
+2.  需要勾选 **Public**，设置为公开仓库。
+3.  勾选添加 **README** 文件，这会设置 `main` 分支为仓库的默认主分支。
 
 
 
+### 4.2 生成静态网页
+
+在 Hugo 网站文件夹的**根目录**下执行 `hugo` 命令构建静态 HTML 网页，生成的 HTML 文件默认存放在 `public` 文件夹中。
+
+**示例：**
+
+```bash
+$ hugo
+Start building sites …
+hugo v0.126.2-8f3d902ce51512931f5759e9279d93e346c9e649+extended windows/amd64 Bu
+ildDate=2024-05-30T15:19:22Z VendorInfo=gohugoio
+
+
+                   | ZH-CN | EN
+-------------------+-------+-----
+  Pages            |    36 | 11
+  Paginator pages  |     0 |  0
+  Non-page files   |    28 |  0
+  Static files     |     8 |  8
+  Processed images |    86 |  0
+  Aliases          |    10 |  0
+  Cleaned          |     0 |  0
+
+Total in 450 ms
+```
 
 
 
+### 4.3 git 初始化与部署
+
+1. 首先在**根目录**下，新建一个`.gitignore` 文件， 写入如下内容：
+
+   ```text
+   public/
+   ```
+
+   因为`public`目录需要单独上传到`Github Page` 仓库，如果不进行忽略的话会造成嵌套无法进行初始化。
+
+2. 完成后在**根目录**下，`git bash`运行（后续操作都在`git bash`下进行）
+
+   <img src="pic/image-20240606100319909.png" alt="image-20240606100319909" style="zoom: 67%;" />
+
+   ```bash
+   git init -b main
+   ```
+
+3. {{< alert >}}如果你是`Windows`系统，可能需要取消`Git`自动的换行替换{{< /alert >}}
+
+   即执行：
+
+   ```bash
+   git config core.autocrlf false
+   ```
+
+   具体详见[windows系统下github_pages部署hugo页面js与css无法使用或文档渲染出错问题](../windows系统下github_pages部署与hugo页面js与css无法使用或文档渲染出错问题/)
+
+   {{< article link="/posts/windows系统下github_pages部署与hugo页面js与css无法使用或文档渲染出错问题/" >}}
+
+   {{< article link="../windows系统下github_pages部署与hugo页面js与css无法使用或文档渲染出错问题/" >}}
+
+4. 如果你还没有申请SSH-Key，请先参考下面的文章，进行SSH-Key的申请，否则无法通过SSH进行`git`上传
+
+   具体详见[为github设置ssh-key](../为github设置ssh-key/)
+
+   {{< article link="posts/为github设置ssh-key/" >}}
+
+   {{< article link=".../为github设置ssh-key/" >}}
+
+5. 将博客文件夹关联远程 GitHub Pages 仓库，使用 GitHub Pages 仓库的 SSH 链接。
+
+   ​	首先获得SSH链接
+
+   ​	![image-20240606095001346](pic/image-20240606095001346.png)
+
+   ​	然后运行（注意把链接替换为你自己的）
+
+   ```bash
+   git remote add origin  git@github.com:JiBinquan/My_Blog.git
+   ```
+
+6. 之后就是先拉取，后推送
+
+   ```bash
+   git pull --rebase origin main  # 拉取远端仓库现有的文件
+   git add .   # 添加修改过得文件， . 表示所有，也可以指定文件 
+   git commit -m "FST" # 提交内容的说明信息
+   git push origin main  # 推送到远端main分支
+   ```
+
+7. 之后就是进入`public`目录，对`Github Pages`进行相同的操作（`.gitignore` 文件可以不用了，注意这里远端SSH链接是`Github Pages`仓库中获取的）
+
+   ```bash
+   git init -b main
+   git config core.autocrlf false
+   git remote add origin git@github.com:Jibinquan/Jibinquan.github.io.git # 这里是Github Pages仓库的SSH链接，不要搞混
+   git pull --rebase origin main
+   git add .
+   git commit -m "FST"
+   git push origin main
+   ```
+
+8. 转到 GitHub 查看相关仓库中是否存在刚刚推送的文件，存在则代表推送成功。
+
+如果没有问题的话，现在访问`Yourusername.github.io`应该就能看到你的博客啦
 
 
 
+## 五、后续文章更新与部署
+
+### 5.1 新建文章
+
+1. 新建文件，在**根目录**下：
+
+   ```bash
+   hugo new post/NewArticle/index.md 
+   ```
+
+2. 找到对应目录下找到`index.md`进行修改，图片可以新建一个`pic`目录放到里面，`blowfish`还支持特征图和背景图定制，只需要命名为`feature.jpg/png`和`background.jpg/png`即可 
+
+3. 本地预览，**根目录**下：
+
+   ```bash
+   hugo server -D
+   ```
+
+4. 没问题后，构建静态网页
+
+   ```bash
+   hugo
+   ```
+
+5. 来到`public`目录下，进行推送
+
+   ```bash
+   git add .
+   git commit -m "更新内容"
+   git push origin main
+   ```
+
+   
+
+### 5.2 删除文章
+
+在`content`和`public`直接删除相关目录即可，然后进行构建推送
+
+```bash
+hugo
+git add .
+git commit -m "更新内容"
+git push origin main
+```
 
 
 
+## 结语
+
+第一次部署博客对于前端苦手的我还是太折磨了，各种bug整到崩溃，后续需要啥功能等有空了再说吧……
 
 
 
+## 参考文献
+
+[Github Pages + Hugo 搭建个人博客 - 渣渣的夏天 (zz2summer.github.io)](https://zz2summer.github.io/github-pages-hugo-搭建个人博客/#六部署到-github)
+
+[如何用 GitHub Pages + Hugo 搭建个人博客 · 小绵尾巴 (cuttontail.blog)](https://cuttontail.blog/blog/create-a-wesite-using-github-pages-and-hugo/#8-本地调试和预览)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 
