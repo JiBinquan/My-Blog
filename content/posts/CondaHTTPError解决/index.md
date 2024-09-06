@@ -1,6 +1,6 @@
 +++
 title = 'CondaHTTPError: HTTP 000 CONNECTION FAILED for url的问题解决'
-date = 2024-06-20T16:11:34+08:00
+date = 2024-06-12T16:11:34+08:00
 draft = false
 
 tags=["技术","服务器","环境配置"]

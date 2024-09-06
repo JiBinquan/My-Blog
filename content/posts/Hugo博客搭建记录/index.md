@@ -412,7 +412,7 @@ Total in 450 ms
 1. 新建文件，在**根目录**下：
 
    ```bash
-   hugo new post/NewArticle/index.md 
+   hugo new posts/NewArticle/index.md 
    ```
 
 2. 找到对应目录下找到`index.md`进行修改，图片可以新建一个`pic`目录放到里面，`blowfish`还支持特征图和背景图定制，只需要命名为`feature.jpg/png`和`background.jpg/png`即可 
