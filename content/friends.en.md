@@ -2,7 +2,7 @@
 title = 'My Friends'
 date = 2024-06-02T18:09:31+08:00
 
-draft = true
+draft = false
 
 showDate=false
 showReadingTime=false
