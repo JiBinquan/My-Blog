@@ -5,6 +5,10 @@ draft = false
 
 tags=["技术","服务器","环境配置"]
 
+showSummary=true
+
+Summary="实验室服务器配环境时最常出现的问题，如果你conda虚拟环境配不上显示CondaHTTPError，可以参考这篇文章"
+
 +++
 
 ## 报错示例

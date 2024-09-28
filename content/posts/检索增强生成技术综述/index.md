@@ -5,6 +5,10 @@ draft = false
 
 tags=["研究","RAG"]
 
+showSummary=true
+
+Summary="RAG通过结合外部数据和生成模型，提高了回答的准确性和实时性。本文综述了RAG技术的发展，包括其基本流程框架、评估方法以及在不同应用场景中的表现，并展望了其未来发展方向和潜在改进。"
+
 +++
 
 
@@ -30,14 +34,12 @@ In recent years, with the development of large language models (such as GPT), ar
  <p align="center"></p>
 
 
-
 <div align="center">​                         <img src="pic/未命名绘图-第 12 页.drawio (1).png" alt="未命名绘图-第 12 页.drawio (1)" style="zoom: 23%;" />      
 </div>
 
 
 
 <p align="center"><b>图1 ChatGPT结合RAG技术解决问题的一个示例</b></p>
-
 ​		为了克服这些挑战，使大语言模型在更多、更专业的领域中得到有效利用，检索增强生成技术（Retrieval-Augmented Generation, RAG）应运而生。RAG技术通过检索外部数据来补充模型知识，以响应用户查询，确保生成的内容更加准确和实时。通过将事实性知识与大语言模型的训练参数分离，RAG技术巧妙地结合了生成模型的强大功能和检索模块的灵活性，提供了一种有效解决方案，以应对纯参数化模型中知识不完整和不充分的问题。图1是ChatGPT结合RAG技术解决问题的一个示例，可以看出RAG补充了大语言模型自身所没有的知识。
 
 ​		自2020年由Lewis等人提出以来[2]，RAG技术已经取得了显著进展。本文旨在对检索增强生成技术进行简单综述。首先，介绍RAG技术的基本流程框架，包括数据预处理、检索、检索后处理和生成四个关键环节。接着，详细讨论RAG技术的评估方法，分析其在不同应用场景中的表现。最后，展望未来RAG技术的发展方向，探讨可能的改进和新兴应用领域。
@@ -58,7 +60,6 @@ In recent years, with the development of large language models (such as GPT), ar
 </div>
 
   <p align="center"><b>图2 RAG技术的基本处理流程和增强方法</b></p>
-
 
 
 ### 2.1 数据预处理

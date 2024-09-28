@@ -8,6 +8,10 @@ tags=["技术","前端","建站"]
 series = ["博客搭建"]
 series_order=4
 
+showSummary=true
+
+Summary="小站总算是有评论功能了！"
+
 +++
 
 一个博客怎么能没有评论系统！Giscus是利用 [GitHub Discussions](https://docs.github.com/en/discussions) 实现的评论系统，让访客可以借助 GitHub 在网站上留下评论和反应。部署起来还是比较简单的，其具有一下特点（来自官网）：

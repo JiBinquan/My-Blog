@@ -3,6 +3,10 @@ title = '某nlp模型训练实验环境配置（Pytorch安装）'
 date = 2023-01-04T15:12:58+08:00
 tags=["补档","技术","环境配置"]
 
+showSummary=true
+
+Summary="尝试训练某古早nlp相关模型，在pytorch下需要Allen-nlp0.8.4版本的环境，踩了好多坑才配置成功（主要是pytorch安装太离谱了）于是记录一下。"
+
 +++
 
 尝试训练某古早nlp相关模型，在pytorch下需要Allen-nlp0.8.4版本的环境，踩了好多坑才配置成功（主要是pytorch安装太离谱了）于是记录一下
@@ -85,7 +89,9 @@ conda info -e
 
 
 
-官网下载地址：https://pytorch.org/get-started/locally/
+官网地址：https://pytorch.org/get-started/locally/
+
+直接进这个也行：[download.pytorch.org/whl/torch/](https://download.pytorch.org/whl/torch/)
 
 
 
@@ -154,6 +160,24 @@ print(torch.zeros(1).cuda())
 print(torch.cuda.is_available()) 显示为True , 最后对torch的操作可以正常执行就一般没问题
 
 参考：https://blog.csdn.net/weixin_41529093/article/details/109399393
+
+
+
+### 24/09/28 补充：
+
+{{< alert >}}
+后来在实际操作中发现，其实可以直接参考 `nvidia-smi` 中的最高支持CUDA版本进行torch安装，即：
+{{< /alert >}}
+
+1. 命令行运行`nvidia-smi`，找到最高支持CUDA版本
+
+   ![image-20240928102143956](pic/image-20240928102143956.png)
+
+2. 再去下载官网找安装包时，只要低于`cu122`的，满足系统和python版本的torch安装包都可以下载进行安装，安装步骤同上。因为linux系统会自动按照安装包要求在虚拟环境中自动下载安装相应的cuda工具包。
+
+   
+
+   
 
 
 

@@ -9,6 +9,10 @@ tags=["技术","前端","建站"]
 series = ["博客搭建"]
 series_order=1
 
+showSummary=true
+
+Summary="本站搭建过程记录，也记录了一些踩过的坑。想要搭建一个hugo博客的朋友看这篇应该可以搭建出一个最基本的能部署的博客了。"
+
 +++
 
 # 博客搭建记录
@@ -100,6 +104,8 @@ blowfish-tools
 
 ### 3.1 基本信息配置
 
+#### 个人信息配置
+
 因为`blowfish ` 默认的是英文信息，首先在博客目录下的 `config\_default` 目录下，复制`languages.en.toml` 和 `menus.en.toml` ，并重命名为`languages.zh-cn.toml` 和 `menus.zh-cn.toml` 
 
 `languages.zh-cn.toml`可以这么写
@@ -139,6 +145,8 @@ title = "JiBinquan's blog"                             # 网页标题
 
 头像放在`assets\img` 路径下（若没有建立目录即可），如果你的`links`没有默认的图标，可以把同名图标放置在`assets\icons`路径下
 
+#### 目录配置
+
 `menus.zh-cn.toml`是目录配置，可以根据你的需要自己配置目录，可以参考如下编写。
 
 ```toml
@@ -176,6 +184,24 @@ pageRef = "tags"
 weight = 30
 
 ```
+
+
+
+#### BaseURL配置
+
+如果你要部署到GithubPages上，请在 `config\_default\hugo.toml` 中设置为你自己的`.github.io`域名，或者你自己绑定的其他域名，如下例所示，否则一些页面跳转功能和搜索功能将失效。
+
+```toml
+# -- Site Configuration --
+# Refer to the theme docs for more details about each of these parameters.
+# https://blowfish.page/docs/getting-started/
+
+theme = "blowfish" # UNCOMMENT THIS LINE
+baseURL = "https://jibinquan.github.io/"
+defaultContentLanguage = "zh-cn"
+```
+
+
 
 
 
@@ -324,6 +350,10 @@ ildDate=2024-05-30T15:19:22Z VendorInfo=gohugoio
 Total in 450 ms
 ```
 
+{{< alert>}}注意在部署前一定是使用`hugo`进行网页构建，而不能使用`hugo server`否则会将`baseurl`编译为本地链接导致部署后搜索等部分功能失效。{{< /alert>}}
+
+
+
 
 
 ### 4.3 git 初始化与部署
@@ -464,5 +494,5 @@ git push origin main
 
 [如何用 GitHub Pages + Hugo 搭建个人博客 · 小绵尾巴 (cuttontail.blog)](https://cuttontail.blog/blog/create-a-wesite-using-github-pages-and-hugo/#8-本地调试和预览)
 
-
+[Hugo主题blowfish搜索功能失效的解决办法之一 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv33217513/)
 

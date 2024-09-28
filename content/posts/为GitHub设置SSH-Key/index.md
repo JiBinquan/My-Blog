@@ -8,6 +8,10 @@ tags=["技术","建站"]
 series = ["博客搭建"]
 series_order=2
 
+showSummary=true
+
+Summary="在2022年后，没有SSH-Key无法通过SSH直接上传文件到仓库，故需要在本地生成SSH-Key上传到github。一般来说，一台设备只需要一个SSH-Key。本文是对Github官方文档的整合"
+
 +++
 
 在2022年后，没有SSH-Key无法通过SSH直接上传文件到仓库，故需要在本地生成SSH-Key上传到github。一般来说，一台设备只需要一个SSH-Key。下面是对Github官方文档的整合。

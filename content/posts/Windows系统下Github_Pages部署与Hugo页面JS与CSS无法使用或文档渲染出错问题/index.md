@@ -8,6 +8,10 @@ tags=["技术","前端","建站"]
 series = ["博客搭建"]
 series_order=3
 
+showSummary=true
+
+Summary="这个自以为是博客部署时遇到的最大的一个坑…默认设置公式排版直接爆炸"
+
 +++
 
 ## 换行符替换导致的 JS/CSS 无法使用或文档渲染出错问题
