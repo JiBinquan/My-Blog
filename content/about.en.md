@@ -6,6 +6,8 @@ showReadingTime=false
 showViews=false 
 showWordCount=false 
 
+showComments=false
+
 +++
 
 ## About Me

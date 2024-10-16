@@ -5,6 +5,9 @@ showDate=false
 showReadingTime=false
 showViews=false
 showWordCount=false
+
+showComments=false
+
 +++
 
 ## About Me
@@ -13,7 +16,7 @@ showWordCount=false
 
 - 我的研究方向是**自然语言处理**，主要关注于大模型研究和应用
 - 菜鸡一枚（研究和游戏都是）
-- 喜欢音乐、电影和旅行（除了干活其他的都挺喜欢…）
+- 喜欢看电影打游戏和出去玩（除了干活其他的都挺喜欢…）
 
 ---
 

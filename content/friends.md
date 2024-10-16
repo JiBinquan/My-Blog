@@ -9,6 +9,17 @@ showReadingTime=false
 showViews=false
 showWordCount=false
 
+showComments=false
+
 +++
 
-## 正在施工
+
+
+## 我的朋友们
+
+
+
+{{< friend name="abel's blog" link=https://blog.abelcode.tech/ avatar=https://avatars.githubusercontent.com/u/105141916?v=4 description="Record abel's Paper and Tech Notes here. " >}}
+
+
+

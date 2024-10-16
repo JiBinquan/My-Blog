@@ -295,9 +295,16 @@ n.delimiters=n.delimiters||[{left:"$$",right:"$$",display:!0},{left:"$",right:"$
 
 #### 3.3.2 字数统计
 
-如果你发现页面统计的字数远远少于文章的字数，请在`hugo.toml`中加入下面一行：
+如果你发现页面统计的字数远远少于文章的字数，请在`hugo.toml`的`defaultContentLanguage = "zh-cn"`后加入下面一行：
 
 ```toml
+hasCJKLanguage = true
+```
+
+如果还是字数还是少，请来到`\themes\blowfish\config\_default\hugo.toml`下，修改相同字段：
+
+```toml
+defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 ```
 
@@ -493,6 +500,8 @@ git push origin main
 [Github Pages + Hugo 搭建个人博客 - 渣渣的夏天 (zz2summer.github.io)](https://zz2summer.github.io/github-pages-hugo-搭建个人博客/#六部署到-github)
 
 [如何用 GitHub Pages + Hugo 搭建个人博客 · 小绵尾巴 (cuttontail.blog)](https://cuttontail.blog/blog/create-a-wesite-using-github-pages-and-hugo/#8-本地调试和预览)
+
+[关于本站的建造 · 群青流星 (karlukle.site)](https://www.karlukle.site/blogs/site-build/#对-blowfish-主题的贡献)
 
 [Hugo主题blowfish搜索功能失效的解决办法之一 - 哔哩哔哩 (bilibili.com)](https://www.bilibili.com/read/cv33217513/)
 

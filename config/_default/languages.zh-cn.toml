@@ -19,7 +19,7 @@ title = "青萍之末"                             # 网页标题
   name = "Ji Binquan"                                  # 作者姓名
   image = "img/avatar.jpg"                            # 作者头像图片路径
   headline = "随便写写，反正也没人看"                                 # 作者的口号或座右铭
-  bio = "现在也没研究明白的研究僧"                         # 作者的简短传记
+  bio = "现在也没研究明白"                         # 作者的简短传记
   # 作者的社交媒体链接列表，还可以添加更多
   links = [
     { zhihu = "https://www.zhihu.com/people/herb-42-46" },    # 知乎链接

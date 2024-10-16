@@ -10,7 +10,7 @@ series_order=4
 
 showSummary=true
 
-Summary="小站总算是有评论功能了！"
+Summary="总算是有评论功能了！"
 
 +++
 
