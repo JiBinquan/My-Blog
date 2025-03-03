@@ -1,7 +1,7 @@
 languageCode = "zh-cn"                                 # 网站使用的语言代码
 languageName = "Simplified Chinese (China)"            # 网站使用的语言名称
 weight = 1                                             # 当前语言页面的排序权重
-title = "青萍之末"                             # 网页标题
+title = "青萍之声"                             # 网页标题
 
 # 参数配置
 [params]
